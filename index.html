@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Santander Río</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="icon" href="img/logo-pestaña-santander.png">
+    <script src="dist/app.js"></script>
+</head>
+
+<body>
+    <div class="h-screen w-full flex">
+        <!-- Imagen bg desktop -->
+        <div class="hidden lg:block h-full lg:basis-2/5">
+            <img class="h-screen object-cover" src="img/bg-santander-rio.jpg" alt="">
+        </div>
+
+        <!-- Form -->
+        <div class="h-full w-full lg:basis-3/5 flex justify-center items-center">
+
+            <div class="flex flex-col items-center lg:items-start lg:w-full lg:px-24">
+                <img class="h-10 mb-6" src="img/logo-santander-rio.png" alt="Logotipo de Santander Río">
+                <div class="text-center lg:text-left mb-8">
+                    <h2 class="font-bold text-3xl mb-2">Crea una cuenta aquí</h2>
+                    <span>Si ya tienes una cuenta <a class="text-red-600 hover:underline" href="#">Inicia
+                            sesión</a></span>
+                </div>
+
+                <form id="formulario" class="w-80 lg:w-full">
+                    <div class="lg:grid lg:grid-cols-2 grid-rows-2 gap-x-3">
+                        <div class="flex flex-col mb-2">
+                            <label class="mb-2" for="nombre">Ingresa tu nombre <span class="text-red-600 font-bold">*</span></label>
+                            <input id="nombre" class="border border-gray-200 border-spacing-1 shadow-sm p-2" name="nombre" type="text"
+                                placeholder="Nombre">
+                        </div>
+                        <div class="flex flex-col mb-2">
+                            <label class="mb-2" for="apellido">Ingresa tu apellido <span class="text-red-600 font-bold">*</span></label>
+                            <input id="apellido" class="border border-gray-200 border-spacing-1 shadow-sm p-2" name="apellido" type="text"
+                                placeholder="Apellido">
+                        </div>
+                        <div class="flex flex-col mb-2 row-start-2">
+                            <label class="mb-2" for="email">Ingresa tu email <span class="text-red-600 font-bold">*</span></label>
+                            <input id="email" class="border border-gray-200 border-spacing-1 shadow-sm p-2" name="email" type="email"
+                                placeholder="Email" autocomplete="email">
+                        </div>
+                        <div class="flex flex-col mb-2 row-start-2">
+                            <label class="mb-2" for="contraseña">Ingresa tu contraseña <span class="text-red-600 font-bold">*</span></label>
+                            <input id="contraseña" class="border border-gray-200 border-spacing-1 shadow-sm p-2" name="contraseña" type="password"
+                                placeholder="Contraseña" autocomplete="current-password">
+                        </div>
+                    </div>
+                    <button id="btnRegistrarse" type="submit" class="w-full bg-red-600 opacity-80 p-3 mt-4 text-white text-base" disabled>Registrarse</button>
+                    <div id="spinner" class="spinner hidden">
+                        <div class="dot1"></div>
+                        <div class="dot2"></div>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
