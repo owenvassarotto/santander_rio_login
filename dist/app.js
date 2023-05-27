@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const btnRegistrarse = document.querySelector('#btnRegistrarse');
     const formulario = document.querySelector('#formulario');
     const spinner = document.querySelector('#spinner');
+    let emailValido = true;
     
     //Llamo a los eventos
     inputNombre.addEventListener('input', validar);
@@ -60,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function(){
     function validar(e){
         //Si el campo está vacío agrega alerta
         if(e.target.value.trim() === ''){
-            // console.log(`El campo ${e.target.id} es obligatorio`);
             mostrarAlerta(`El ${e.target.id} es obligatorio`, e.target.parentElement);
             campos[e.target.name] = '';
             comprobarObjetoCampos();
@@ -68,8 +68,12 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         if(e.target.id === 'email' && !validarEmail(e.target.value)){
+            emailValido = false;
             mostrarAlerta(`El ${e.target.id} es inválido`, e.target.parentElement);
+            comprobarObjetoCampos();
             return;
+        }else{
+            emailValido = true;
         }
 
         campos[e.target.name] = e.target.value;
@@ -104,7 +108,8 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     function comprobarObjetoCampos(){
-        if(Object.values(campos).includes('')){
+
+        if(Object.values(campos).includes('') || emailValido === false){
             btnRegistrarse.classList.add('opacity-80');
             btnRegistrarse.disabled = true;
             return;
